@@ -3,9 +3,10 @@ create table adminUsers (
 	user_name varchar(100) not null,
 	email_id varchar(200) not null primary key,
 	mobile_no varchar(100) not null primary key,
-	role_assign varchar(100) not null,
+	role_name varchar(100) not null,
 	pass_word varchar(200) not null,
-	isActive boolean not null
+	isActive boolean not null,
+	createDate date not null
 )
 
 create table roles(
@@ -37,15 +38,26 @@ create table categories(
 )
 
 create table users(
-	user_id bigserail not null primary key,
+	user_id bigserial not null primary key,
+	username varchar(500) not null,
 	email varchar(500) not null,
 	pass_word varchar(500) not null,
 	mobile_no varchar(100) not null,
 	address varchar(500) not null,
-	pincode varchar(500) not null,
-	order_id  varchar(500) not null,
-	
+	pincode varchar(500) not null	
 )
+
+create table orders(
+	order_id varchar(500) not null,
+	user_id varchar(500) not null,
+	product_id varchar(500) not null,
+	category_id varchar(500) not null,
+	quantity varchar(500) not null,
+	amount_paid varchar(500) not null,
+	address varchar(500) not null,
+	delivery_status varchar(500) not null,
+	createDate date not null,
+) 
 
 
 
